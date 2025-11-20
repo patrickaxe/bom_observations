@@ -1,11 +1,5 @@
 # Use rocker/r-base as base image
-FROM rocker/r-base:latest
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev
+FROM rocker/geospatial:latest
 
 # Install necessary R packages listed in a requirements file - Be sure to edit this file as needed
 COPY requirements.R /tmp/requirements.R
@@ -25,7 +19,7 @@ COPY entrypoint.sh /app/
 RUN apt-get update && apt-get install -y cron
 
 # Add script to crontab to run at 4am every day
-RUN echo "* 4 * * * /usr/bin/Rscript /app/dl_aus_weather.R >> /app/logs/cron.log 2>&1" > /app/crontab
+RUN echo "* 4 * * * Rscript /app/dl_aus_weather.R >> /app/logs/"`date +"%Y-%m-%d"`"_cron.log 2>&1" > /app/crontab
 
 # enable crontab
 RUN crontab /app/crontab
