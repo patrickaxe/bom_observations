@@ -1,6 +1,6 @@
 # Add your required CRAN packages here, for example:
-install.packages(c("devtools", "remotes", "data.table", "dplyr", "ggplot2",
-                   "here"),
+install.packages(c("devtools", "remotes", "data.table", "dplyr", "ggplot2","sf",
+                   "here","units"),
                     repos = "https://cran.r-project.org", dependencies = TRUE)
 
 # Add your required github public packages here, for example:
