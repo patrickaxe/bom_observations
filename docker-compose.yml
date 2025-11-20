@@ -1,5 +1,5 @@
 services:
-  bom_observations:
+  bom_obs:
     image: "bom_observations"
     volumes:
       - ./data:/app/data
@@ -8,4 +8,4 @@ services:
 
 
 volumes:
-  bom_observations: {}
+  bom_obs: {}
