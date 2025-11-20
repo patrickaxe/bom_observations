@@ -3,7 +3,7 @@ library(epiphytoolR)
 
 dl_time <- format(Sys.time(), format = "%y%m%d_%H%M")
 dl_dir <- "/app/data/tgz/"
-if(isFALSE(dir_exists(dl_dir))){
+if(isFALSE(dir.exists(dl_dir))){
     dir.create(dl_dir, recursive = TRUE)}
 
 Sys.sleep(round(runif(1,0,240))) # wait randomly between 0 amd 4 minutes
