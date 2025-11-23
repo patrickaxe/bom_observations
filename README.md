@@ -14,3 +14,8 @@ To use this container, follow these steps:
 1. Clone the repository to your local machine.
 2. Build the Docker image by running `docker build -t bom_observations .`.
 3. Run the Docker container by executing `docker-compose up -d`.
+4. Optional Settings for Volumes
+| Host Path      | Container Path |
+| ----------- | ----------- |
+| /path/to/local_data   |/app/data/tgz |
+| /path/to/local_logs   | /app/logs |
